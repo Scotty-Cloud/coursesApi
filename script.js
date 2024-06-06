@@ -56,7 +56,7 @@ async function fetchAndDisplayCourses() {
     let courses = await response.json();
 
     let courseContainer = document.querySelector("#course-container");
-    courseContainer.innerHTML = ""; // clear the container
+    courseContainer.innerHTML = "";
 
     for (let course of courses) {
       let courseCard = document.createElement("div");
@@ -89,24 +89,20 @@ async function fetchAndDisplayCourses() {
   }
 }
 
-async function showCourseDetail(course) {
-  try {
-    let modal = document.querySelector("#modal");
-    let instructorElement = document.querySelector("#instructor");
-    let startDateElement = document.querySelector("#startDate");
-    let numDaysElement = document.querySelector("#numDays");
+function showCourseDetail(course) {
+  let modal = document.querySelector("#modal");
+  let instructorElement = document.querySelector("#instructor");
+  let startDateElement = document.querySelector("#startDate");
+  let numDaysElement = document.querySelector("#numDays");
 
-    instructorElement.innerText = `Instructor: ${course.instructor}`;
-    startDateElement.innerText = `Start Date: ${course.startDate}`;
-    numDaysElement.innerText = `Course Length: ${course.numDays} days`;
+  instructorElement.innerText = `Instructor: ${course.instructor}`;
+  startDateElement.innerText = `Start Date: ${course.startDate}`;
+  numDaysElement.innerText = `Course Length: ${course.numDays} days`;
 
-    modal.style.display = "block";
-  } catch (error) {
-    console.error(error);
-  }
+  modal.style.display = "block";
 }
 
-document.addEventListener("click", async (event) => {
+document.addEventListener("click", (event) => {
   if (
     event.target === document.getElementById("modal") ||
     event.target.className === "close"
