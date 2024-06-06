@@ -6,9 +6,17 @@ fetch("http://localhost:3000/courses")
       const courseCard = document.createElement("div");
       courseCard.className = "course-card";
 
-      const courseTitle = document.createElement("h2");
-      courseTitle.innerText = course.dept;
-      courseCard.appendChild(courseTitle);
+      const courseName = document.createElement("h2");
+      courseName.innerText = course.dept;
+      courseCard.appendChild(courseName);
+
+      const courseNumber = document.createElement("h3")
+      courseNumber.innerText = course.courseNum;
+      courseCard.appendChild(courseNumber)
+
+      const courseTitle = document.createElement("h4");
+      courseTitle.innerText = course.courseName;
+      courseCard.appendChild(courseTitle)
 
       const detailLink = document.createElement("a");
       detailLink.href = "#";
