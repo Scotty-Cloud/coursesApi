@@ -27,4 +27,8 @@ function showCourseDetail(course) {
     const instructorElement = document.querySelector('#instructor')
     const startDateElement = document.querySelector('#startDate')
     const numDaysElement = document.querySelector('#numDays')
+
+    instructorElement.innerText = `Instructor: ${course.instructor}`
+    startDateElement.innerText = `Start Date: ${course.startDate}`
+    numDaysElement.innerText = `Course Length: ${course.numDays} days`
 }
