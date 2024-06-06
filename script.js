@@ -7,7 +7,7 @@ fetch("http://localhost:3000/courses")
       courseCard.className = "course-card";
 
       const courseTitle = document.createElement("h2");
-      courseTitle.innerText = course.title;
+      courseTitle.innerText = course.dept;
       courseCard.appendChild(courseTitle);
 
       const detailLink = document.createElement("a");
