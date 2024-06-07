@@ -32,6 +32,19 @@ async function fetchDetails() {
 
       let cell6 = row.insertCell();
       cell6.innerText = `${detail.numDays} days`;
+
+      // Add a new row for the back button
+      let backButtonRow = tableBody.insertRow();
+      let backButtonCell = backButtonRow.insertCell();
+      backButtonCell.colSpan = 7; // Make the cell span all columns
+
+      let backButton = document.createElement("button");
+      backButton.textContent = "Back";
+      backButton.onclick = function () {
+        window.location.href = "index.html";
+      };
+      backButtonCell.appendChild(backButton);
+    
     } catch (error) {
       console.error("Error:", error);
     }
